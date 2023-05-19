@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo 2';
+    background: #131313;
+    font-size: 12px;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    padding: 13px;
+    opacity: .8;
+    white-space: nowrap;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+a:before {
+    font-family: apple color emoji, segoe ui emoji, notocoloremoji, segoe ui symbol, android emoji, emojisymbols, emojione mozilla;
+}
+
+.menu-item:first-of-type a {
+    border-radius: 13px 0 0 21px;
+}
+
+.menu-item:last-of-type a {
+    border-radius: 0 21px 13px 0;
+}
+
+.sub-menu .menu-item:first-of-type a {
+    border-radius: 13px 21px 0 0;
+}
+
+.sub-menu .menu-item:last-of-type a {
+    border-radius: 0 0 21px 13px;
+}
+
+nav {
+    max-width: 360px;
+    max-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    animation: bounceIn 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275) 1 forwards;
+    animation-delay: 500ms;
+    transform-style: preserve-3d;
+    opacity: 0;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scaleX(.55) scaleY(.89);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-menu {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    bottom: 89px;
+    transform: skewY(-5deg) scale(.89) rotateX(-5deg) rotateZ(-3deg);
+}
+
+.sub-menu a {
+    font-size: 15px;
+}
+
+.menu-item {
+    position: relative;
+    display: inline-flex;
+}
+
+.menu-item:hover .sub-menu {
+    pointer-events: all;
+    animation: showBounce 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+    transform-style: preserve-3d;
+}
+
+@keyframes showBounce {
+    100% {
+        opacity: 1;
+        transform: translateX(-21px) skewY(-5deg);
+    }
+}
+
+
+.sub-menu li {
+    display: flex;
+}
+
+.sub-menu a {
+    font-size: 17px;
+}
+
+
+.menu-item:nth-of-type(3) .sub-menu li:nth-of-type(2) a {
+    font-size: 21px;
+}
+
+.menu-item:nth-of-type(3) .sub-menu li:nth-of-type(3) a {
+    font-size: 27px;
+}
+
+.menu-item a {
+    position: relative;
+    text-align: center;
+}
+
+.menu-item a:before {
+    content: '';
+    display: block;
+    font-size: 34px;
+    transform: rotateZ(-8deg);
+    margin-bottom: 5px;
+    transition: transform 189ms ease-out;
+}
+
+.menu-item a:hover:before {
+    animation: hoverEmoji 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+}
+
+@keyframes hoverEmoji {
+    0% {
+        transform: scaleX(.89) rotateX(-21deg) rotateZ(-8deg);
+    }
+
+    100% {
+        transform: rotateZ(-8deg);
+    }
+}
+
+nav>ol>.menu-item:nth-of-type(1)>a:before {
+    content: '🏠';
+}
+
+nav>ol>.menu-item:nth-of-type(2)>a:before {
+    content: '🤷';
+}
+
+nav>ol>.menu-item:nth-of-type(3)>a:before {
+    content: '🎮';
+}
+
+nav>ol>.menu-item:nth-of-type(4)>a:before {
+    content: '🛂';
+}
+
+nav>ol>.menu-item:nth-of-type(5)>a:before {
+    content: '📹';
+}
+
+nav>ol>.menu-item:nth-of-type(3) ol li a:before,
+nav>ol>.menu-item:nth-of-type(4) ol li a:before {
+    content: '💪';
+    display: inline-flex;
+    font-size: inherit;
+    transform: rotateZ(-8deg);
+    margin-right: 5px;
+    transition: transform 300ms ease-out;
+}
+
+nav>ol>li {
+    width: 20%;
+    margin-right: -4px;
+}
+
+nav>ol>.menu-item:nth-of-type(4) ol li:nth-of-type(1) a:before {
+    content: '🍖';
+}
+
+nav>ol>.menu-item:nth-of-type(4) ol li:nth-of-type(2) a:before {
+    content: '♨️';
+}
+
+nav>ol>.menu-item:nth-of-type(4) ol li:nth-of-type(3) a:before {
+    content: '☀️';
+}

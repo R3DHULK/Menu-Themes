@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title>Animated Menu button with list</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+   <div class="menu-container">
+      <div class="button">
+         Menu
+         <span class="fas fa-bars"></span>
+      </div>
+      <ul>
+         <li><a href="https://r3dhulk.github.io/">Home</a></li>
+         <li><a href="https://r3dhulk.github.io/About/">About</a></li>
+         <li><a href="https://r3dhulk.github.io/Courses/">Courses</a></li>
+         <li><a href="https://r3dhulk.github.io/GameZone/">Games</a></li>
+         <li><a href="https://r3dhulk.github.io/Social-Media/">Contact</a></li>
+      </ul>
+   </div>
+   <script>
+      $(document).ready(function () {
+         $('.button').click(function () {
+            if ($(this).hasClass('expand')) {
+               $('ul').slideUp(function () {
+                  $('.button').removeClass('expand');
+                  $('.fas').removeClass('expand')
+               });
+            } else {
+               $(this).addClass('expand');
+               setTimeout(function () {
+                  $('.fas').addClass('expand');
+                  $('ul').stop().slideDown();
+               }, 200);
+            }
+         });
+      });
+   </script>
+</body>
+
+</html>

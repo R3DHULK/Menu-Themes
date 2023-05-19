@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body  {  
+  background: #edf5e1;
+  font-family: 'Roboto', sans-serif;
+  text-transform:uppercase;
+  text-shadow: .5px .5px 0 #CCCCCC;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: .75s;
+}
+
+.nav{  
+  padding: 0px;
+  width: 640px;
+  margin: 100px auto auto auto;
+}
+
+ul{  
+  list-style-type: none;
+}
+
+li a{ 
+  padding: 30px;
+  float:left;
+  width: 100px;
+  text-align:center;
+  font-size:15px;
+  color: #edf5e1;
+  text-decoration:none;
+}
+
+li a:hover .circle {
+  position: relative;
+  z-index: 1;
+  top: -60px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  animation: illuminate 2s ease-out infinite;
+  background: #fdc6be;
+}
+
+li i{
+  height: 50px;
+}
+
+li a:hover i {
+  transform: translateY(-10px);
+}
+
+li a .title{
+  font-size:0px;
+}
+
+li a:hover .title {
+  transform: translateY(10px);
+  font-size: 15px;
+  transition: .5s;
+}
+       
+li a.title:hover{
+  transform: translateY(-10px);
+}
+
+.nav li:first-child a {  
+  background:#05386b !important;
+}
+
+.nav li:nth-child(2) a {  
+  background:#379683 !important;
+}
+
+.nav li:nth-child(3) a {  
+  background:#5cdb95 !important;
+}
+
+.nav li:nth-child(4) a {  
+  background:#8ee4af !important;
+}
+
+.nav li:first-child:hover ~ .background {
+  background: #05386b;
+}
+.nav li:nth-child(2):hover ~ .background {
+  background: #379683;
+}
+.nav li:nth-child(3):hover ~ .background {
+  background: #5cdb95;
+}
+
+.nav li:nth-child(4):hover ~ .background {
+  background: #8ee4af;
+}
+
+@keyframes illuminate {
+  0% {
+    transform: scale(.7, .7);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100%{
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
